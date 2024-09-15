@@ -12,7 +12,7 @@ const List<MenuList> menu = <MenuList>[
   MenuList(
       'Biblioteca', Icon(Icons.my_library_books_outlined,weight: 200,), Icon(Icons.my_library_books_rounded,weight: 200,)),
   MenuList(
-      'Cadastrar Livro', Icon(Icons.my_library_add_outlined), Icon(Icons.my_library_add_rounded)),
+      'Cadastrar Livro', Icon(Icons.my_library_add_outlined,weight: 200,), Icon(Icons.my_library_add_rounded,weight: 200,)),
   MenuList(
-      'Perfil', Icon(Icons.settings_outlined), Icon(Icons.settings)),
+      'Perfil', Icon(Icons.settings_outlined,weight: 200,), Icon(Icons.settings,weight: 200,)),
 ];
