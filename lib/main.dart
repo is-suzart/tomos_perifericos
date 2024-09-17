@@ -40,7 +40,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return AdaptiveLayout(
       topNavigation: SlotLayout(config: {
         Breakpoints.smallAndUp: SlotLayout.from(
-            key: const Key("bottom-topbar"),
+            key: const Key("mobile-topbar"),
             builder: (context) {
               return Container(
                   color: Colors.white,
@@ -101,38 +101,70 @@ class _MyHomePageState extends State<MyHomePage> {
             selectedIndex: _selectedIndex,
             backgroundColor: Colors.white,
             //labelBehavior: NavigationDestinationLabelBehavior.alwaysHide,
-            children:
-            menu.map(
-                  (MenuList m) {
-                return NavigationDrawerDestination(
-                  label: Text( m.label),
-                  icon: m.icon,
-                  selectedIcon: m.selectedIcon,
-                );
-              },
-            ).toList(),
+            children: [
+              Padding(
+                  padding: EdgeInsets.symmetric(vertical: 24),
+                child: Center(
+                  child: SvgPicture.asset('assets/logo.svg'),
+                ),
+              ),
+              ...menu.map(
+                    (MenuList m) {
+                  return NavigationDrawerDestination(
+                    label: Text( m.label),
+                    icon: m.icon,
+                    selectedIcon: m.selectedIcon,
+                  );
+                },
+              ).toList(),
+            ]
+
+
           );
           }
         )
       }) ,
       body: SlotLayout(config: {
-        Breakpoints.smallAndUp: SlotLayout.from(
-            key: const Key("appbar-mobile"),
+        Breakpoints.small: SlotLayout.from(
+            key: const Key("body-mobile"),
             builder: (context) {
-              return IndexedStack(
-                index: _selectedIndex,
-                children: const [Biblioteca(), Cadastrar(), Perfil()],
-              );
+
+            return IndexedStack(
+                          index: _selectedIndex,
+                          children: const [Biblioteca(columns: 2,), Cadastrar(), Perfil()],
+                        );
+                  }),
+        Breakpoints.mediumAndUp: SlotLayout.from(
+            key: const Key("body-mobile"),
+            builder: (context) {
+
+            return IndexedStack(
+                          index: _selectedIndex,
+                          children: const [Biblioteca(columns: 3,), Cadastrar(), Perfil()],
+                        );
+                  }),
+                Breakpoints.largeAndUp: SlotLayout.from(
+            key: const Key("body-mobile"),
+            builder: (context) {
+
+            return IndexedStack(
+                          index: _selectedIndex,
+                          children: const [Biblioteca(columns: 4,), Cadastrar(), Perfil()],
+                        );
+                  }),
             }),
-        Breakpoints.medium: SlotLayout.from(
-            key: const Key('body-medium'),
-            builder: (context) {
-              return IndexedStack(
-                index: _selectedIndex,
-                children: const [Biblioteca(), Cadastrar(), Perfil()],
-              );
-            })
-      }),
+      // secondaryBody: SlotLayout(config: {
+      //   Breakpoints.largeAndUp: SlotLayout.from(key: Key('secondary-body'),
+      //     builder: (context) {
+      //     return NavigationDrawer(
+      //       backgroundColor: Colors.white,
+      //         children: [
+      //       Text("Seu Livro",style: Theme.of(context).textTheme.headlineLarge!.copyWith(color: Theme.of(context).primaryColor),),
+      //           Text("Aparecerá aqui!", style: Theme.of(context).textTheme.headlineSmall,)
+      //     ]);
+      //     }
+      //   )
+      // }),
     );
   }
 }
