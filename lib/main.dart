@@ -89,10 +89,10 @@ class _MyHomePageState extends State<MyHomePage> {
         Breakpoints.largeAndUp: SlotLayoutConfig.empty()
       }),
       primaryNavigation: SlotLayout(config: {
-        Breakpoints.largeAndUp: SlotLayout.from(key: Key('navbar-desktop'),
+        Breakpoints.largeAndUp: SlotLayout.from(key: const Key('navbar-desktop'),
           builder: (context) {
           return NavigationDrawer(
-            tilePadding: EdgeInsets.symmetric(horizontal: 12,vertical: 8),
+            tilePadding: const EdgeInsets.symmetric(horizontal: 12,vertical: 8),
             onDestinationSelected: (int index) {
               setState(() {
                 _selectedIndex = index;
@@ -103,7 +103,7 @@ class _MyHomePageState extends State<MyHomePage> {
             //labelBehavior: NavigationDestinationLabelBehavior.alwaysHide,
             children: [
               Padding(
-                  padding: EdgeInsets.symmetric(vertical: 24),
+                  padding: const EdgeInsets.symmetric(vertical: 24),
                 child: Center(
                   child: SvgPicture.asset('assets/logo.svg'),
                 ),
@@ -153,14 +153,17 @@ class _MyHomePageState extends State<MyHomePage> {
                         );
                   }),
             }),
-      // secondaryBody: SlotLayout(config: {
+      // secondaryNavigation: SlotLayout(config: {
       //   Breakpoints.largeAndUp: SlotLayout.from(key: Key('secondary-body'),
       //     builder: (context) {
       //     return NavigationDrawer(
       //       backgroundColor: Colors.white,
       //         children: [
-      //       Text("Seu Livro",style: Theme.of(context).textTheme.headlineLarge!.copyWith(color: Theme.of(context).primaryColor),),
-      //           Text("Aparecerá aqui!", style: Theme.of(context).textTheme.headlineSmall,)
+      //           Container(
+      //             width: 300,
+      //             height: 100,
+      //             color: Colors.pink,
+      //           )
       //     ]);
       //     }
       //   )
