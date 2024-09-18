@@ -99,7 +99,6 @@ class _MyHomePageState extends State<MyHomePage> {
               });
             },
             selectedIndex: _selectedIndex,
-            backgroundColor: Colors.white,
             //labelBehavior: NavigationDestinationLabelBehavior.alwaysHide,
             children: [
               Padding(
@@ -143,7 +142,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           children: const [Biblioteca(columns: 3,), Cadastrar(), Perfil()],
                         );
                   }),
-                Breakpoints.largeAndUp: SlotLayout.from(
+                Breakpoints.extraLarge: SlotLayout.from(
             key: const Key("body-mobile"),
             builder: (context) {
 

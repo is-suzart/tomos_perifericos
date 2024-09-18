@@ -18,7 +18,7 @@ class BookState extends State<Book>
             child: Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                    AspectRatio(aspectRatio: 8/12,child: Image.network(widget.img,fit: BoxFit.cover)),
+                    AspectRatio(aspectRatio: 8/11,child: Image.network(widget.img,fit: BoxFit.cover)),
                     Expanded( // Adicione padding ao redor do texto
                             
                             child: Padding(
@@ -39,7 +39,7 @@ class BookState extends State<Book>
                                         Row(
                                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                             children: [
-                                                Text("R 2,00 / semana",style: Theme.of(context).textTheme.headlineSmall!.copyWith(color: Theme.of(context).primaryColor)),
+                                                Text("R\$ 2,00 / semana",style: Theme.of(context).textTheme.bodySmall!.copyWith(color: Theme.of(context).primaryColor)),
                                                 //Text("fotinha")
                                                 Icon(Icons.person,weight: 200,)
                                             ]
