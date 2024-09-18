@@ -41,7 +41,7 @@ class BookState extends State<Book>
                                             children: [
                                                 Text("R\$ 2,00 / semana",style: Theme.of(context).textTheme.bodySmall!.copyWith(color: Theme.of(context).primaryColor)),
                                                 //Text("fotinha")
-                                                Icon(Icons.person,weight: 200,)
+                                                const Icon(Icons.person,weight: 200,)
                                             ]
                                         )
                                     ]
